@@ -1,0 +1,95 @@
+/* .inputs {
+    padding: 10px;
+} */
+  
+input {
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.addBtn {
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.trip-track {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    margin: 25px 0px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.trip {
+    position: relative;
+    width: 100px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #4c348b;
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: 2;
+}
+  
+.label {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #333;
+}
+  
+/* continued line */
+.line {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -162px;
+    width: 200px;
+    height: 2px;
+    background-color: #4c348b;
+    z-index: 1;
+}
+  
+/* non-continued line + arrow */
+.trip.non-continued .line {
+    background-color: #2196f3;
+    position: relative;
+}
+  
+.trip.non-continued .line::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    border-left: 6px solid #2196f3;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+  
+/* repeated dotted line */
+.trip.repeated .line {
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+      to right,
+      orange,
+      orange 5px,
+      transparent 5px,
+      transparent 10px
+    );
+    background-size: 10px 2px;
+    height: 2px;
+}
+  
